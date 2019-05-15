@@ -2,7 +2,7 @@ FROM node:11
 
 LABEL version="1.0"
 LABEL description="Web app geotracking NodeJS"
-LABEL maintainer="Andres Avendaño - aavenda1@eafit.edu.co"
+LABEL maintainer=""
 
 ARG PORT=3000
 ENV PORT $PORT
