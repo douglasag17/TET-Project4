@@ -1,10 +1,10 @@
 {
-  "name": "nodejs-notes-app",
+  "name": "nodejs-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "express-session": "^1.15.6",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.10",
+    "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   },
