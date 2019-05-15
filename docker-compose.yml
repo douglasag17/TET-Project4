@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    container_name: nginx-server-dou1
+    container_name: nginx-server-dou2
     image: nginx:1.15-alpine
     restart: unless-stopped
     volumes:
@@ -23,7 +23,7 @@ services:
       - ./data/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
   nodeapp:
-    container_name: nodeapp-dou1
+    container_name: nodeapp-dou2
     restart: always
     build: .
     ports:
@@ -31,7 +31,7 @@ services:
     depends_on:
       - mongo-server      
   mongo-server:
-    container_name: mongo-server-dou1
+    container_name: mongo-server-dou2
     image: mongo
     volumes:
       - ./data:/data/db
