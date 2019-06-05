@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-domains=(tetgps4.tk)
+domains=(project4tet.tk)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="dag171802@gmail.com" # Adding a valid address is strongly recommended
