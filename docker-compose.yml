@@ -28,12 +28,3 @@ services:
     build: .
     ports:
       - "3000:3000"
-    depends_on:
-      - mongo-server      
-  mongo-server:
-    container_name: mongo-server-dou3
-    image: mongo
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
