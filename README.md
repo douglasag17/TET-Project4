@@ -5,6 +5,8 @@ Materia: Topicos Especiales en Telemática
 - Andrés Felipe Avendaño aavenda1@eafit.edu.co 
 - Felipe Macías Herrera fmacias1@eafit.edu.co 
 
+## Visitar App web [https://project4tet.tk/](https://project4tet.tk/)
+
 ## Descripción
 
 Aplicación Web Escalable en la nube de AWS con atributos de calidad como: Disponibilidad, Rendimiento y Seguridad.
@@ -135,5 +137,22 @@ Después, luego de finalizada la creación, nos dirigimos a editar el Auto Scali
 - Poner los nameservers en los ajustes del dominio creado en freenom
 ![Screenshot](imagenes/freenom5.png)
 
+# HTTPS
+- Para obtener los certificados SSl se utilizó un contenedor de Let’s Encrypt
+- [Ver docker-compose.yml](https://github.com/pipe980819/TET-project4/blob/master/docker-compose.yml)
+    
+        certbot:
+        image: certbot/certbot
+        restart: unless-stopped
+        volumes:
+          - ./data/certbot/conf:/etc/letsencrypt
+          - ./data/certbot/www:/var/www/certbot
+        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"	
 
+- Para obtener los certificados se debe ejecutar init-letsencrypt.sh
+
+        chmod +x init-letsencrypt.sh
+        sudo ./init-letsencrypt.Screenshot
+    
+## JMeter
 
