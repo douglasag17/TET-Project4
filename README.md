@@ -155,4 +155,8 @@ Después, luego de finalizada la creación, nos dirigimos a editar el Auto Scali
         sudo ./init-letsencrypt.Screenshot
     
 ## JMeter
-
+- Para medir el desempeño de la aplicacion se utilizo la herramienta JMeter, lanzandonos los siguientes resultados:
+- En esta primera imagen se ven los resultados obtenidos por la aplicaion JMeter luego de realizar 10000 peticiones a la aplicacion basica, sin seguir todos los pasos anteriores, en un lapso de 5 segundos.
+![Screenshot](imagenes/JMeter1.png)
+- En esta segunda imagen se puede ver como luego de seguir todos los pasos anteriores se hace la misma prueba a la aplicacion y este presenta una mejoría en la distribucion de la carga, mostrandonos unicamente 6 peticiones sin respuesta.
+![Screenshot](imagenes/JMeter2.png)
