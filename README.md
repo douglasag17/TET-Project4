@@ -45,6 +45,8 @@ Al completar los pasos anteriores de manera exitosa, la configuración del LB se
 
 Si es así, se da clic en Create y se espera que todo salga de manera exitosa.
 
+## Launch Configuration
+
 Una vez creado el LB, se procese a configurar el Launch Configuration.
 El Launch Configuration permite definifir cómo se llevará a cabo el escalamiento y despliegue de la aplicación.
 Primero, se ubica  Launch Configurations en el Dashboard y se da clic en Create.
@@ -76,6 +78,35 @@ El script se pone en User Data y como formato texto (as text).
 
 Luego se le asigna un Security Group, nuevamente es importante que este coincida con el de MongoAtlas.
 ![Screenshot](imagenes/launchConf4.png)
+
+## Auto Scaling Group
+
+Una vez completado el paso anterior, se procede a crear un Auto Scaling Group, este se encarga de definir las políticas de escalado de la aplicación.
+Primero, se ubica AutoScaling Group en el Dashboard y se da clic en Create.
+![Screenshot](imagenes/auto1.png)
+
+Luego, se define que el Lauch Configuration a implementar será el creado anteriormente.
+![Screenshot](imagenes/auto2.png)
+
+Después, se le asigna un nombre, se le definen el número de instancias EC2 con las cuales se quiere que inicie la aplicación.
+Se elige la VPC y las subredes. Es importante recordar que estos últimos dos deben de coincidir con el de MongoAtlas.
+![Screenshot](imagenes/auto3.png)
+
+El siguiente paso se refiere a crear las políticas de escalamiento (alarmas) de la aplicación.
+En este caso se definieron dos, una de crecimiento y otra de decremento.
+En la primera, se define que se creará una instancia más cuando el porcentaje de utilización de una CPU esté por encima del 80% durante un periodo de más de 5 minutos.
+![Screenshot](imagenes/auto4.png)
+
+En la segunda, se define que se destruirá una instancia cuando el porcentaje de utilización de una CPU esté por debajo del 20% durante un periodo de más de 15 minutos.
+![Screenshot](imagenes/auto5.png)
+
+Al final, la configuración debería de lucir como a continuación:
+![Screenshot](imagenes/auto6.png)
+
+Se da clic en Create.
+
+Después, luego de finalizada la creación, nos dirigimos a editar el Auto Scaling Group acabado de crear, y se le asigna el Load Balancer previamente creado y se guarda.
+![Screenshot](imagenes/auto7.png)
 
 ## Obtener dominio
 
